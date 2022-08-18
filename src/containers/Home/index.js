@@ -34,7 +34,7 @@ const PlacesContainer = ( props ) => {
               }}
               options={ props.data.SearchReducer.searches }
               searchSize={ "large" }
-              placeholder={ "Type the place keyword here" }
+              placeholder={ "Type the place keyword here and press enter to search" }
               onSearch={ val => {
                 updateSearchReducerAndGetGooglePlaces( val )
               }}
