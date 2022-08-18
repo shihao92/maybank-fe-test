@@ -1,8 +1,14 @@
 .container {
   height: 100vh;
+}
+
+.container-search {
+  height: 100%;
   display: flex !important;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 30px;
 }
 
 .pl-1 {
@@ -15,4 +21,17 @@
 
 .pl-3 {
   padding-left: 3em !important;
+}
+
+.ant-select-selector {
+  height: 45px !important;
+  border-radius: 20px !important;
+
+  .ant-select-selection-search-input {
+    height: 40px !important;
+  }
+
+  .ant-select-selection-placeholder {
+    line-height: 40px !important;
+  }
 }

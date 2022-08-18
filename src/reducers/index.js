@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
 
-import ResultReducer from './Result'
+import ResultsReducer from './Results'
 import SearchReducer from './Search'
 
 export default combineReducers({
-  ResultReducer,
+  ResultsReducer,
   SearchReducer
 })

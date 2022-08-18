@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+import { storeUserSearches } from 'actions/Search'
+import { storeResults } from 'actions/Results'
 import { Get } from 'utils/axios'
 
 const HOC = ( WrappedComponent ) => {
@@ -14,7 +16,7 @@ const HOC = ( WrappedComponent ) => {
     // doing this way to protect the key from being used by someone else 
     getPlaces = ( search ) => Get(
       `/places/${ search }`,
-      payload => this.setState({ places: payload }),
+      payload => this.setState({ places: payload.data.predictions }, () => this.props.storeResults( payload.data.predictions )),
       error => {},
       payload => this.setState({ loading: payload })
     )
@@ -30,7 +32,10 @@ const HOC = ( WrappedComponent ) => {
     }
   }
   const mapStateToProps = state => ({ data: state })
-  return connect( mapStateToProps )( WithHOC )
+  return connect( mapStateToProps, {
+    storeUserSearches,
+    storeResults
+  })( WithHOC )
 }
 
 export default HOC

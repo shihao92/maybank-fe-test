@@ -4,7 +4,7 @@ let initialState = {
   results: []
 }
 
-const ResultReducer = ( state = initialState, action ) => {
+const ResultsReducer = ( state = initialState, action ) => {
   switch( action.type ) {
     case STORE_RESULTS:
       return ({
@@ -15,4 +15,4 @@ const ResultReducer = ( state = initialState, action ) => {
   }
 }
 
-export default ResultReducer
+export default ResultsReducer
